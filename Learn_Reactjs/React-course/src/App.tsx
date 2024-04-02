@@ -1,22 +1,24 @@
-import { useState } from 'react'
+import { useContext, useEffect } from "react";
 
-import PostList from './components/PostList'
-import MainHeader from './components/MainHeader'
-import { Outlet } from 'react-router-dom'
+import MainHeader from "./components/MainHeader";
+import { Outlet } from "react-router-dom";
+import { PostContext } from "./hook/postContext";
 
 function App() {
+  const { state } = useContext(PostContext);
+
+  useEffect(() => {
+    console.log({ state });
+  }, []);
 
   return (
     <>
-    <MainHeader/>
-    <main>
-    {/* <PostList isPost={modalIsShow} stopModelPost={handleCloseModel} /> */}
-    <Outlet/>
-
-    </main>
-     
+      <MainHeader />
+      <main>
+        <Outlet />
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

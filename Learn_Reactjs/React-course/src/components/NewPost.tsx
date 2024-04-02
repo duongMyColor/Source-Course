@@ -11,7 +11,8 @@ import Modal from './Modal';
 
 export interface postDataType {
   enterBody:string,
-  enterAuth:string
+  enterAuth:string,
+  id:string
 }
 
 function NewPost() {
@@ -46,7 +47,8 @@ function NewPost() {
     e.preventDefault()
     let postData:postDataType = {
       enterBody:enterBody,
-      enterAuth:enterAuth
+      enterAuth:enterAuth,
+      id:''
     }
     handAddnewPost(postData)
     navigate('/')
