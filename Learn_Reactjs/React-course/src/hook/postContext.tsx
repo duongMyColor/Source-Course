@@ -9,7 +9,7 @@ interface ContextType {
 
 export const PostContext = createContext<ContextType>({ state: "" });
 
-const PostProvider = ({ children }: PostProps) => {
+const PostProvider = ({ children }: PostProps): JSX.Element => {
   const [state, setState] = useState<string>("test");
 
   const context = {
