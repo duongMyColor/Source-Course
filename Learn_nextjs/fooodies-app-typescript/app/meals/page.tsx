@@ -4,9 +4,12 @@ import classes from "./page.module.css";
 import MealGird from "@/components/meals/meal-gird";
 import { getMeals } from "@/lib/meals";
 import { Suspense } from "react";
+import Test from "@/components/Test";
 
 export default async function MealPage() {
   const meals = await getMeals();
+
+  console.log("meal server");
 
   return (
     <>
@@ -23,9 +26,11 @@ export default async function MealPage() {
         </div>
       </header>
       <main>
-        <Suspense>
-          <MealGird meals={meals} />
-        </Suspense>
+        {/* <Suspense> */}
+        <MealGird meals={meals} />
+        {/* </Suspense> */}
+
+        {/* <Test /> */}
       </main>
     </>
   );
