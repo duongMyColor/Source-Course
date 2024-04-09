@@ -10,6 +10,11 @@ interface ShareContextProp {
   children: React.ReactNode;
 }
 
+/**
+ * step1; create context
+ * step2: create wrap component
+ * step3: call usecontex to component use
+ */
 const shareContext = createContext<ThemeContextType>({
   meal: {
     title: "",
@@ -20,6 +25,7 @@ const shareContext = createContext<ThemeContextType>({
   },
   SET_MEAL: () => {},
 });
+
 
 const ShareContextProvide = ({ children }: ShareContextProp) => {
   const [meal, setMeal] = useState<TypeMeal>();
