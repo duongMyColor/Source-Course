@@ -22,8 +22,12 @@ function AuthForm() {
         const result = await signIn("credentials", {
           email,
           password,
-          callbackUrl: "/",
+          redirect:false,
         });
+
+        if (result?.error) {
+          console.log("lỗi:",result.error)
+        }
 
         console.log({ result });
       } catch (error) {

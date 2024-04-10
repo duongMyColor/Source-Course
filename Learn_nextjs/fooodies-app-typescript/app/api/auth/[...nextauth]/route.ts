@@ -10,7 +10,7 @@ const authOptions: NextAuthOptions = {
       name: "Credentials",
       id: "credentials",
       credentials: {
-        username: {
+        email: {
           label: "Email",
           type: "email",
           placeholder: "test@example.com",
@@ -23,7 +23,9 @@ const authOptions: NextAuthOptions = {
 
         const client = await db
           .collection("users")
-          .findOne({ email: credentials?.username });
+          .findOne({ email: credentials?.email });
+        
+        console.log({client})
 
         if (!client) {
           throw new Error("no user found");
@@ -42,6 +44,7 @@ const authOptions: NextAuthOptions = {
       },
     }),
   ],
+  secret: "ksdjfksdjkfjkdsjfksdjkfj",
   pages: {
     signIn: "/auth",
   },
