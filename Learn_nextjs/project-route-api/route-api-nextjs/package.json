@@ -1,5 +1,5 @@
 {
-  "name": "app-typescript",
+  "name": "route-api-nextjs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,18 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "better-sqlite3": "^9.4.3",
-    "mongodb": "^6.5.0",
     "next": "14.1.4",
-    "next-auth": "^4.24.7",
     "react": "^18",
     "react-dom": "^18",
-    "slugify": "^1.6.6",
-    "xss": "^1.0.15"
+    "swr": "^2.2.5"
   },
   "devDependencies": {
-    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
