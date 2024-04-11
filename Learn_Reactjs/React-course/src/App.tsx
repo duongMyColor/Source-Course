@@ -9,7 +9,11 @@ function App() {
 
   useEffect(() => {
     console.log({ state });
+
+    console.log("use Effect")
   }, []);
+
+  console.log("bên ngoài useEffect")
 
   return (
     <>

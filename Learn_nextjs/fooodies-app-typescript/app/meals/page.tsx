@@ -4,12 +4,21 @@ import classes from "./page.module.css";
 import MealGird from "@/components/meals/meal-gird";
 import { getMeals } from "@/lib/meals";
 import { Suspense } from "react";
-import Test from "@/components/Test";
+import { getServerSession } from "next-auth";
+import {authOptions} from '@/app/api/auth/[...nextauth]/route'
+import { redirect } from "next/navigation";
+// import { redirect } from "next/dist/server/api-utils";
 
 export default async function MealPage() {
   const meals = await getMeals();
 
-  console.log("meal server");
+    const session = await getServerSession(authOptions);
+
+    console.log("session",session?.user)
+    if(!session){
+      redirect("/auth")
+    }
+
 
   return (
     <>
